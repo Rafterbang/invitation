@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://feeldreams.github.io/heikm/style.css" rel="stylesheet" type="text/css" />
+<script src="https://feeldreams.github.io/hayoloh/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+<head>
+<title>Special Invitation to My Girl</title>
+</head>
+<body>
+	
+   <!-- Ganti Audio di sini -->
+   <audio src="https://www.mboxdrive.com/song.mp3" id="linkmp3" class="sembunyi"></audio>
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="https://i.postimg.cc/BQL2mCcw/20220322-181958-2.jpg" id="wallpaper"/><div id="beneranblur"></div>
+   </div>
+   
+   <div id='Content'>
+     <div id="kadoIn">
+       <!-- Tombol Surat --><img src="https://i.ibb.co/7V1b00H/message.png"/>
+     </div>
+     <p id="ket">Open the invitation!</p>
+
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker"/>
+         
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1"/>
+         <img src="https://feeldreams.github.io/ngumpet.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker3"/>
+         <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>
+         <img src="https://feeldreams.github.io/mikir.gif" id="fotostiker5"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker6"/>
+         <img src="https://feeldreams.github.io/weee.gif" id="fotostiker7"/>
+     </div>
+     <p id="halo" class="halo">here is open invitation to my sweety</p>
+     
+     <div><blockquote id='bq'>
+      <p id="kalimat">hello cutie girl, it's me raffly. gimana hatinya? masihkah aku menyelami rindu disana? ataukah aku tenggelam dalam lautan putus asa? aku harap intuisiku tak pernah terhapus di benakmu, hembusan kasihku tak pernah lelap oleh egomu. cukup panjang ya perjalanan kisah yang rumit bahkan tak jauh dari kata sulit. apakah bersatunya kita ini pernah kamu bayangkan sebelumnya? setelah kurang lebih 7 tahun sejak terakhir kali kata sayang saling kita ucapkan. untuk merayakan berhasilnya kita bertahan di apocalypse percinta-an ini. maukah adinda menemaniku menikmati santapan malam pada 17 desember mendatang? ini hanya awal, badai besar pasti datang tetap disampingku untuk itu. </p>
+      <p id="kalimatb">mau ya hehe 👉🏻👈🏻</p>
+     </blockquote></div>
+
+     <!-- Tombol Kirim Pesan -->
+     <div id="Tombol">
+      <a id="By" onClick="menuju()">
+        <b id="tmbl">bolehh</b>
+      </a>
+      
+      <a id="Bn" onClick="ditolak()">g sibuk</a><a id="Bn2" onClick="ditolak2()"></a>
+     </div>
+    
+   </div>
+
+<!-- Jangan Edit Bagian Ini --><script>
+  async function inipesan(){
+    var { value: nama } = await swals.fire({
+           title: 'siapa nii', input: 'text',
+       });
+       if(nama && nama.length < 11){
+         window.nama = nama;
+         await swalst.fire({title: 'aloww, ' + nama + '! ❤️', imageUrl: '' + fotostiker1.src,});
+         await swalst.fire({title: 'mau ngapain hayo', imageUrl: '' + fotostiker2.src,});
+         pilihwarna();
+         } else {
+           await swals.fire('Ups!', 'masukin dong namanyaaa');inipesan();
+    }
+  }
+
+  async function pilihwarna(){
+  //Variable Pemilihan Warna
+  var iniwarna1 = "sayang dong";
+  var iniwarna2 = "sayang banget";
+  
+  var { isConfirmed: warna } = await swals.fire({
+  title: 'bae sayang aku ga?',
+  text: 'harus jujur boong tp dikit gapapa deh',
+  imageUrl: '' + fotostiker3.src,
+  showCancelButton: true,
+  confirmButtonText: '' + iniwarna1,
+  cancelButtonText: '' + iniwarna2,
+});
+if(warna){
+    await swals.fire({title: 'yeee', text: 'kalo kamu ' + iniwarna1 + ' berarti mau jalan sama aku kann', imageUrl: '' + fotostiker4.src,});
+    var { isConfirmed: warna2 } = await swals.fire({
+    title: 'udah yakinn ' + iniwarna1 + '?', 
+    text: 'atau mau ganti?', 
+    imageUrl: '' + fotostiker5.src,
+    showCancelButton: true,
+    confirmButtonText: 'yyy',
+    cancelButtonText: 'gnti',
+});
+if(warna2){
+    await swals.fire({title: 'nice choice', text: 'sekarang lihat ini ya ❤️', imageUrl: '' + fotostiker6.src,});
+    mulainama();
+  } else {
+    await swals.fire({title: 'yayy ' + iniwarna2 + '!', text: 'sama aja si tp bonus cium ya ;p', imageUrl: '' + fotostiker7.src,});
+    mulainama();
+}
+}
+else {
+    await swals.fire({title: 'yeee!', text: 'kalo kamu ' + iniwarna2 + ' berarti mau jalan sama aku kann', imageUrl: '' + fotostiker4.src,});
+    var { isConfirmed: warna2 } = await swals.fire({
+    title: ' udah yakinn' + iniwarna2 + '?',  
+    text: 'atau mau ganti?', 
+    imageUrl: '' + fotostiker5.src,
+    showCancelButton: true,
+    confirmButtonText: 'yyy',
+    cancelButtonText: 'gnti',
+});
+}
+if(warna2){    
+    await swals.fire({title: 'yayyy' + iniwarna1 + '!', text: 'sama aja si tp bonus cium ya ;p', imageUrl: '' + fotostiker7.src,});
+    mulainama();
+  } else {
+    await swals.fire({title: 'yauda', text: 'sekarang lihat ini ya ❤️', imageUrl: '' + fotostiker6.src,});
+    mulainama();
+}
+}
+   fungsi=0;fungsiAwal=0;Bn2.innerHTML=Bn.innerHTML;vketikhalo=halo.innerHTML;halo.innerHTML = "";Content.style = "opacity:1;margin-top:16vh;";const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.innerHTML);const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-snowflake"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-snowflake"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+   async function menuju(){await swals.fire('yeay', 'kirim jawabanmu ke aku ya', 'success');window.location = "https://api.whatsapp.com/send?phone=6281252291067";Tombol.style="margin-top:15px;opacity:1;transform: scale(1);";}
+</script>
+<script src="https://feeldreams.github.io/heikm/script.js"></script>
+<!-- Sampai Sini -->
+</body>
+</html>
