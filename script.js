@@ -1,14 +1,52 @@
-flag=1;flagg=1;
-  function ditolak(){
-  	if(fungsi==1){
-  	if(flagg==1){Bn.style="margin:12px 0 12px 12px;cursor:default;opacity:0;transition:all 0s ease;";flagg=2;
-                 Bn2.style="width:auto;opacity:1;transition:all .3s ease;margin:160px 0 12px 140px;"}
-  	}
-   }
-  function ditolak2(){
-  	if(fungsi==1){
-  	if(flagg==2){Bn2.style="width:auto;opacity:1;transition:all .3s ease;margin:190px 0 12px 12px;";flagg=3}
-  	    else if(flagg==3){Bn2.style="width:auto;opacity:1;transition:all .3s ease;margin:160px 160px 12px 12px;";flagg=4}
-  		else if(flagg==4){Bn2.style="transition:all .3s ease;margin:12px 0 12px 12px;";Bn.style="margin:12px 0 12px 12px";flagg=1}
-  	    }
-   }
+  document.getElementById("kadoIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";wallpaper.style="transform: scale(1.5);";ket.style="display:none";setTimeout(initengahan,300);setTimeout(inipesan,500)}}
+
+  function initengahan(){
+    kadoIn.style="display:none";ket.style="display:none";
+    Content.style = "opacity:1;margin-top:2vh";
+    bodyblur.style="opacity:.3";
+    wallpaper.style="transform: scale(1.5);";
+  }
+  
+  async function mulainama() {
+    bodyblur.style="opacity:.7";
+    wallpaper.style="transform: scale(1);";
+    fotostiker.style="display:inline-flex;";setTimeout(ftmuncul,200);
+    setTimeout(kethalo,500);setInterval(berjatuhan,400);
+  }
+  
+  function ftmuncul(){fotostiker.style="display:inline-flex;opacity:1;transform:scale(1)";}
+  function fthilang(){fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
+  function jjfoto(){fotostiker.style.animation="rto .8s infinite alternate";setInterval(berjatuhan,200);}
+  
+  function kethalo(){
+  new TypeIt("#halo", {
+  strings: ["" + vketikhalo], startDelay: 70, speed: 20, waitUntilVisible: true,
+  afterComplete: function(){
+    halo.innerHTML = vketikhalo;
+    setTimeout(bqmuncul,300);
+  },}).go();
+  }
+  
+  function bqmuncul(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transform: skew(-3deg, 0deg);-webkit-transform: skew(-3deg, 0deg);margin-top:0";
+                      1();fungsi=1;}
+  function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.3";bq.style = "position:relative;transition:all .7s ease;";}
+
+  function tombol(){wallpaper.style="transform: scale(1);";Tombol.style="opacity:1;transform: scale(1);";fungsi=1}
+  document.getElementById("By").onclick = function() {if(fungsi==1){menuju();}}
+
+  vketik1=kalimat.innerHTML;kalimat.innerHTML = "";
+  function mulaiketik1(){
+  new TypeIt("#kalimat", {
+  strings: ["" + vketik1], startDelay: 400, speed: 40, cursor: false, breakLines: true, waitUntilVisible: true, lifelike: true,
+  afterComplete: function(){
+    setTimeout(mulaiketik2,700);
+  },}).go();
+  }
+  vketik2=kalimatb.innerHTML;kalimatb.innerHTML = "";
+  function mulaiketik2(){
+  new TypeIt("#kalimatb", {
+  strings: ["" + vketik2], startDelay: 1, speed: 50, cursor: false, breakLines: true, waitUntilVisible: true, lifelike: true,
+  afterComplete: function(){
+    tombol();
+  },}).go();
+  }
